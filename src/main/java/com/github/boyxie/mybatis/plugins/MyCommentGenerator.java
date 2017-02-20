@@ -1,4 +1,4 @@
-package cn.boyxie.common.mybatis.plugins;
+package com.github.boyxie.mybatis.plugins;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

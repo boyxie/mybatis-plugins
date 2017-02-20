@@ -1,4 +1,4 @@
-package cn.boyxie.common.mybatis.plugins;
+package com.github.boyxie.mybatis.plugins;
 
 import java.text.MessageFormat;
 import org.mybatis.generator.codegen.mybatis3.IntrospectedTableMyBatis3Impl;

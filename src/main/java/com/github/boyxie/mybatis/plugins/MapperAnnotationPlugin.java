@@ -1,4 +1,4 @@
-package cn.boyxie.common.mybatis.plugins;
+package com.github.boyxie.mybatis.plugins;
 
 import java.util.List;
 import org.mybatis.generator.api.IntrospectedTable;
