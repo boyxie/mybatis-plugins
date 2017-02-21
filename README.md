@@ -1,8 +1,7 @@
-使用方法：
-
-主pom.xml配置一下plugin属性
-
-1、以下配置基于oracle数据库，以及mybatis的1.3.5版本
+##使用方法：
+###以下配置基于oracle数据库，以及mybatis的1.3.5版本  
+####1、主pom.xml配置一下plugin属性
+````
 <plugin>
     <groupId>org.mybatis.generator</groupId>
     <artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -31,13 +30,13 @@
         </dependency>
     </dependencies>
 </plugin>
+````
+####2、在resource下新增generatorConfig.xml，具体配置看示列代码    
 
-2、在resource下新增generatorConfig.xml，具体配置看示列代码
+####3、运行，可以直接maven插件运行，其他方法看官方文档或以下参考博客   
 
-3、运行，可以直接maven插件运行，其他方法看官方文档或以下参考博客
-
-参考文章包括：
-http://www.mybatis.org/generator/configreference/xmlconfig.html
-http://blog.csdn.net/qq_21251983/article/details/50731368
-http://www.jianshu.com/p/1b826d43dbaf 系列
-http://blog.csdn.net/isea533/article/details/52430691
+参考文章包括：   
+http://www.mybatis.org/generator/configreference/xmlconfig.html    
+http://blog.csdn.net/qq_21251983/article/details/50731368    
+http://www.jianshu.com/p/1b826d43dbaf 系列    
+http://blog.csdn.net/isea533/article/details/52430691    
