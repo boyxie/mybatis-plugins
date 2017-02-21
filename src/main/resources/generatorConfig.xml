@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <!--引入官方或者的自己插件，确保路径正确就行-->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="com.github.boyxie.mybatis.plugins.MapperAnnotationPlugin"/>
+        <!--<plugin type="cn.evun.sweet.mybatis.plugins.CommentGeneratorPlugin"/>-->
+        <!--注释自定义的插件接口只能修改属性，所以还是采取自己实现注释接口，增加类注释和dao方法注释-->
+        <commentGenerator type="com.github.boyxie.mybatis.plugins.MyCommentGenerator">
+            <!--开启注释，如果是插件注释，需关闭-->
+            <property name="suppressAllComments" value="false"/>
+            <!--开启时间注释-->
+            <property name="suppressDate" value="false"/>
+            <!--增加类注释-->
+            <property name="addRemarkComments" value="true"/>
+            <!--自定义日期格式-->
+            <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+            <!--新增自定义属性，配置作者名称-->
+            <property name="author" value="boyxie"/>
+        </commentGenerator>
+
+        <!-- 数据库驱动配置 -->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@//xx.xx.xx.xx:1521/xxx"
+                        userId="xxx" password="xxxxxxx">
+            <!--oracle读取属性配置项-->
+            <property name="remarksReporting" value="true"></property>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <!--是否生成对应精度字段-->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- do实体类配置 -->
+        <javaModelGenerator targetPackage="com.github.boyxie.mybatis.demo.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <!--继承的父类-->
+            <property name="rootClass" value="com.github.boyxie.mybatis.demo.model.BaseModel"/>
+            <!--字段判空-->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- xml文件配置 -->
+        <sqlMapGenerator targetPackage="com.github.boyxie.mybatis.demo.sqlMap" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- dao文件配置 -->
+        <javaClientGenerator targetPackage="com.github.boyxie.mybatis.demo.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 数据库表， 1.3.4开始新增mapperName属性，可以自定义dao和xml名称，注意是两个一起修改名称的  -->
+        <table tableName="NT_PV_USERS" schema="xxxx" mapperName="NtPvUserDAO" domainObjectName="NtPvUserDO"
+               enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" />
+    </context>
+</generatorConfiguration>
