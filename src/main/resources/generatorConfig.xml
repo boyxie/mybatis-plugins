@@ -24,11 +24,14 @@
         </commentGenerator>
 
         <!-- 数据库驱动配置 -->
-        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                        connectionURL="jdbc:oracle:thin:@//xx.xx.xx.xx:1521/xxx"
-                        userId="xxx" password="xxxxxxx">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://xxxxx:3306/xxxx"
+                        userId="xxx" password="xxxxx">
+<!--                driverClass="oracle.jdbc.driver.OracleDriver"-->
+<!--                        connectionURL="jdbc:oracle:thin:@//xx.xx.xx.xx:1521/xxx"-->
+<!--                        userId="xxx" password="xxxxxxx">-->
             <!--oracle读取属性配置项-->
-            <property name="remarksReporting" value="true"></property>
+<!--            <property name="remarksReporting" value="true"></property>-->
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -40,7 +43,7 @@
         <javaModelGenerator targetPackage="com.github.boyxie.mybatis.demo.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <!--继承的父类-->
-            <property name="rootClass" value="com.github.boyxie.mybatis.demo.model.BaseModel"/>
+<!--            <property name="rootClass" value="com.github.boyxie.mybatis.demo.model.BaseModel"/>-->
             <!--字段判空-->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -56,7 +59,8 @@
         </javaClientGenerator>
 
         <!-- 数据库表， 1.3.4开始新增mapperName属性，可以自定义dao和xml名称，注意是两个一起修改名称的  -->
-        <table tableName="NT_PV_USERS" schema="xxxx" mapperName="NtPvUserDAO" domainObjectName="NtPvUserDO"
+<!--        schema="xxxx" mapperName="userDAO" domainObjectName="userDO"-->
+        <table tableName="activity_rules"
                enableCountByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" />
     </context>
