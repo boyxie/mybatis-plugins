@@ -16,7 +16,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.40</version>
+            <version>8.0.16</version>
         </dependency>
     </dependencies>
     <properties>
@@ -42,7 +42,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.40</version>
+                        <version>8.0.16</version>
                     </dependency>
                     <!--把自己的插件引入到MBG Maven Plugin的依赖中 -->
                     <dependency>
